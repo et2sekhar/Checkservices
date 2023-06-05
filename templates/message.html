@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %} Message {% endblock %}
+{% block content %}
+<div class="p-3 mb-2 bg-success  text-white d-flex justify-content-center"><h2>{{ message }}</h2></div>
+    <form action="{{ redirect_url }}">
+      <input type="submit" value="Back to Home">
+    </form>
+{% endblock%}
+

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %} Man-Perf-Mon Home {% endblock %}
+{% block content %}
+    <div class="row">
+    <div class="col-sm-6">
+    <div class="card">
+    <h5 class="card-header">Server Name: {{ computer_name }}</h5>
+    <div class="card-body">
+    <p>Server Name: {{ computer_name }}</p>
+    <p>Server Ip: {{ ip_address }}</p>
+    <p>OS Name: {{ os_name }}</p>
+    <p>OS Version: {{ os_version }}</p>
+    <p>Last started at: {{ last_start_time }}</p>
+    {% if status == 'Running' %}
+      <p>{{ service }}  service status: <span class="green">{{ status }}</span></p>
+      <form method="post" action="/stop">
+        <button type="submit" disabled>Start service</button>
+        <button type="submit" >Stop service</button>
+      </form>
+    {% else %}
+      <p>{{ service }}  service status: <span class="red">{{ status }}</span></p>
+      <form method="post" action="/start">
+        <button type="submit">Start service</button>
+        <button type="submit" disabled>Stop service</button>
+      </form>
+    {% endif %}
+    </div></div></div>
+        <div class="col-sm-6">
+    <div class="card">
+    <h5 class="card-header">Server Name: {{ computer_name }}</h5>
+    <div class="card-body">
+    <p>Server Name: {{ computer_name }}</p>
+    <p>Server Ip: {{ ip_address }}</p>
+    <p>OS Name: {{ os_name }}</p>
+    <p>OS Version: {{ os_version }}</p>
+    <p>Last started at: {{ last_start_time }}</p>
+    {% if status == 'Running' %}
+      <p>{{ service }}  service status: <span class="green">{{ status }}</span></p>
+      <form method="post" action="/stop">
+        <button type="submit" disabled>Start service</button>
+        <button type="submit" >Stop service</button>
+      </form>
+    {% else %}
+      <p>{{ service }}  service status: <span class="red">{{ status }}</span></p>
+      <form method="post" action="/start">
+        <button type="submit">Start service</button>
+        <button type="submit" disabled>Stop service</button>
+      </form>
+    {% endif %}
+    </div></div></div>
+{% endblock%}

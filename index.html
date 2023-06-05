@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Windows Service Manager</title>
+  </head>
+  <body>
+    <h1>Windows Service Manager</h1>
+    <p>Current service status: {{ status }}</p>
+    <form method="post" action="/start">
+      <button type="submit">Start service</button>
+    </form>
+    <form method="post" action="/stop">
+      <button type="submit">Stop service</button>
+    </form>
+  </body>
+</html>
